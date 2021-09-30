@@ -1,8 +1,8 @@
 import paho.mqtt.client as mqtt
 import json
-from project1.mqtt import *
-from project1.ialarmlistener import IAlarmListener
-from project1.ialarm import IAlarm
+from mqtt import *
+from ialarmlistener import IAlarmListener
+from ialarm import IAlarm
 
 
 class AlarmProxy(IAlarm):
@@ -12,21 +12,20 @@ class AlarmProxy(IAlarm):
     The class implements the IAlarm interface
     """
     def on_message(self, client, message):
+        
+        if self.listener:
+            
+            # unpack the event from the message
+            msg = json.loads(str(message.payload.decode("utf-8")))
+            if msg['id'] == CLIENT_ALARM_STUB:
 
-        if self.listener is None:
-            return
-
-        # unpack the event from the message
-        msg = json.loads(str(message.payload.decode("utf-8")))
-        if msg['id'] == CLIENT_ALARM_STUB:
-
-            # dispatch the event to the listener
-            if msg['cmd'] == SYSALARM_STATE_OFF:
-                self.listener.on_alarm_off()
-            elif msg['cmd'] == SYSALARM_STATE_ON:
-                self.listener.on_alarm_on()
-            elif msg['cmd'] == SYSALARM_STATE_RING:
-                self.listener.on_alarm_ring()
+                # dispatch the event to the listener
+                if msg['cmd'] == SYSALARM_STATE_OFF:
+                    self.listener.on_alarm_off()
+                elif msg['cmd'] == SYSALARM_STATE_ON:
+                    self.listener.on_alarm_on()
+                elif msg['cmd'] == SYSALARM_STATE_RING:
+                    self.listener.on_alarm_ring()
 
     def __init__(self, listener: IAlarmListener = None) -> None:
 

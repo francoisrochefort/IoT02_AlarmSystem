@@ -13,17 +13,19 @@ class SmartPlugProxy(ISmartPlug):
     """
     def on_message(self, client, message):
 
-        # unpack the event from the message
-        msg = json.loads(str(message.payload.decode("utf-8")))
-        if msg['id'] == CLIENT_SMARTPLUG_STUB:
+        if self.listener:
 
-            # dispatch the event to the listener
-            if msg['cmd'] == SMARTPLUG_STATE_OFF:
-                self.listener.on_smartplug_off()
-            elif msg['cmd'] == SMARTPLUG_STATE_ON:
-                self.listener.on_smartplug_on()
+            # unpack the event from the message
+            msg = json.loads(str(message.payload.decode("utf-8")))
+            if msg['id'] == CLIENT_SMARTPLUG_STUB:
 
-    def __init__(self, listener: ISmartPlugListener) -> None:
+                # dispatch the event to the listener
+                if msg['cmd'] == SMARTPLUG_STATE_OFF:
+                    self.listener.on_smartplug_off()
+                elif msg['cmd'] == SMARTPLUG_STATE_ON:
+                    self.listener.on_smartplug_on()
+
+    def __init__(self, listener: ISmartPlugListener = None) -> None:
 
         # init. MQTT
         self.client = mqtt.Client(CLIENT_SMARTPLUG_PROXY)
