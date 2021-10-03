@@ -103,46 +103,46 @@ class Alarm(IAlarm):
                 self.State = State.OFF
                 GPIO.output(DEL_PIN, GPIO.LOW)
                 GPIO.output(BUZZER_PIN, GPIO.LOW)
+                self.event_log.write_event(OBJECT_NAME, EVENT_OFF)
                 if self.listener is not None:
                     self.listener.on_alarm_off()
-                    self.event_log.write_event(OBJECT_NAME, EVENT_OFF)
                 
             elif self.State == State.DELAY_S:
                 self.State = State.OFF
                 GPIO.output(DEL_PIN, GPIO.LOW)
+                self.event_log.write_event(OBJECT_NAME, EVENT_OFF)
                 if self.listener is not None:
                     self.listener.on_alarm_off()
-                    self.event_log.write_event(OBJECT_NAME, EVENT_OFF)
 
             elif self.State == State.BUZZER:
                 self.State = State.OFF
                 GPIO.output(DEL_PIN, GPIO.LOW)
                 GPIO.output(BUZZER_PIN, GPIO.LOW)
+                self.event_log.write_event(OBJECT_NAME, EVENT_OFF)
                 if self.listener is not None:
                     self.listener.on_alarm_off()
-                    self.event_log.write_event(OBJECT_NAME, EVENT_OFF)
     
             elif self.State == State.DELAY_E:
                 self.State = State.OFF
                 GPIO.output(DEL_PIN, GPIO.LOW)
+                self.event_log.write_event(OBJECT_NAME, EVENT_OFF)
                 if self.listener is not None:
                     self.listener.on_alarm_off()
-                    self.event_log.write_event(OBJECT_NAME, EVENT_OFF)
 
         elif event == Event.END_DELAY:
             if self.State == State.DELAY_S:
                 self.State = State.ARMED
                 GPIO.output(DEL_PIN, GPIO.HIGH)
+                self.event_log.write_event(OBJECT_NAME, EVENT_ON)
                 if self.listener is not None:
                     self.listener.on_alarm_on()
-                    self.event_log.write_event(OBJECT_NAME, EVENT_ON)
                 
             elif self.State == State.DELAY_E:
                 self.State = State.BUZZER
                 GPIO.output(BUZZER_PIN, GPIO.HIGH)
+                self.event_log.write_event(OBJECT_NAME, EVENT_ALARM)
                 if self.listener is not None:
                     self.listener.on_alarm_ring()
-                    self.event_log.write_event(OBJECT_NAME, EVENT_ALARM)
                 
         elif event == Event.DOOR:
             if self.State == State.ARMED:
@@ -154,17 +154,17 @@ class Alarm(IAlarm):
             if command == 'ON':
                 self.State = State.ARMED
                 GPIO.output(DEL_PIN, GPIO.HIGH)
+                self.event_log.write_event(OBJECT_NAME, EVENT_ON)
                 if self.listener is not None:
                     self.listener.on_alarm_on()
-                    self.event_log.write_event(OBJECT_NAME, EVENT_ON)
 
             else:
                 self.State = State.OFF
                 GPIO.output(DEL_PIN, GPIO.LOW)
                 GPIO.output(BUZZER_PIN, GPIO.LOW)
+                self.event_log.write_event(OBJECT_NAME, EVENT_OFF)
                 if self.listener is not None:
                     self.listener.on_alarm_off()
-                    self.event_log.write_event(OBJECT_NAME, EVENT_OFF)
 
     def blink_led(self):
         DELAY = 5
