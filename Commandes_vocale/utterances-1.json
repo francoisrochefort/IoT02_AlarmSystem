@@ -1,0 +1,118 @@
+{
+    "utterances": [
+        {
+            "text": "Activate the alarm.",
+            "entities": [],
+            "traits": [],
+            "intent": "Alarm_on"
+        },
+        {
+            "text": "Alarm activation",
+            "entities": [],
+            "traits": [],
+            "intent": "Alarm_on"
+        },
+        {
+            "text": "Alarm activation.",
+            "entities": [],
+            "traits": [],
+            "intent": "Alarm_on"
+        },
+        {
+            "text": "Alarm up",
+            "entities": [],
+            "traits": [],
+            "intent": "Alarm_off"
+        },
+        {
+            "text": "Desactivate the alarm",
+            "entities": [],
+            "traits": [],
+            "intent": "Alarm_off"
+        },
+        {
+            "text": "Put the alarm on",
+            "entities": [],
+            "traits": [],
+            "intent": "Alarm_on"
+        },
+        {
+            "text": "System off",
+            "entities": [],
+            "traits": [],
+            "intent": "Alarm_off"
+        },
+        {
+            "text": "Turn off the alarm.",
+            "entities": [],
+            "traits": [],
+            "intent": "Alarm_off"
+        },
+        {
+            "text": "Turn off the light",
+            "entities": [],
+            "traits": [],
+            "intent": "Lights_off"
+        },
+        {
+            "text": "Turn off the lights",
+            "entities": [],
+            "traits": [],
+            "intent": "Lights_off"
+        },
+        {
+            "text": "Turn on the light",
+            "entities": [],
+            "traits": [],
+            "intent": "Lights_on"
+        },
+        {
+            "text": "Turn on the lights",
+            "entities": [],
+            "traits": [],
+            "intent": "Lights_on"
+        },
+        {
+            "text": "Turn up the light.",
+            "entities": [],
+            "traits": [],
+            "intent": "Lights_on"
+        },
+        {
+            "text": "What is the date?",
+            "entities": [],
+            "traits": [],
+            "intent": "Actual_day"
+        },
+        {
+            "text": "What time is it?",
+            "entities": [],
+            "traits": [],
+            "intent": "Actual_Time"
+        },
+        {
+            "text": "When are we?",
+            "entities": [],
+            "traits": [],
+            "intent": "Actual_day"
+        },
+        {
+            "text": "desactivation",
+            "entities": [],
+            "traits": [],
+            "intent": "Alarm_off"
+        },
+        {
+            "text": "system off",
+            "entities": [],
+            "traits": [],
+            "intent": "Alarm_off"
+        },
+        {
+            "text": "system on",
+            "entities": [],
+            "traits": [],
+            "intent": "Alarm_on"
+        }
+    ]
+}

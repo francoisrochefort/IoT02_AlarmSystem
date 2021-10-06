@@ -10,7 +10,7 @@ class Speech:
     @staticmethod
     def say(text: str):
 
-        tts = gTTS(text, lang="fr")
+        tts = gTTS(text, lang="en")
         tts.save('out.mp3')
         cmd = ['mpg321', '-q', 'out.mp3']
         subprocess.call(cmd)
