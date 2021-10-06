@@ -18,7 +18,7 @@ class STT_phrase:
         self.wit_api = 'https://api.wit.ai/speech'
         self.wit_key = "BBE6PH4CTNAAFAATWTXE465SRZCZ4PUP"
         self.wit_key_FR = 'NVRKGJKBJIN5OYURQSX453HGTWYILCKZ'
-        self.listenTime = 4
+        self.listenTime = 3
 
     def wait(self):
         pa = pyaudio.PyAudio()
@@ -69,7 +69,10 @@ class STT_phrase:
         if len(ma_reponse) > 1 :
             last_index = (len(ma_reponse) -1)
             data = json.loads(ma_reponse[last_index])
-            intent_wit = data['intents'][0]['name']
+            try:
+                intent_wit = data['intents'][0]['name']
+            except:
+                intent_wit = "Unknown"
         else:
             intent_wit = "Nothing"
         return intent_wit

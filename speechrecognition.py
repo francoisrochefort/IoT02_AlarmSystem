@@ -20,6 +20,7 @@ CMD_TURN_OFF_SMARTPLUG = u"Lights_off"
 CMD_WHAT_TIME = u"Actual_Time"
 CMD_WHAT_DATE = u"Actual_day"
 NO_COMMAND = u"Nothing"
+UNKNOWN_COMMAND = u"Unknown"
 
 
 class SpeechRecognition(threading.Thread):
@@ -74,6 +75,10 @@ class SpeechRecognition(threading.Thread):
             elif match == NO_COMMAND:
                 text2say = "I heard nothing"
                 Speech.say(text2say)
+            elif match == UNKNOWN_COMMAND:
+                text2say = "I do not understand"
+                Speech.say(text2say)
+
 
 
 
