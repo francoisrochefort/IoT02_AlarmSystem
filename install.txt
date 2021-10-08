@@ -1,0 +1,44 @@
+===========================================================================
+
+hint from visual code:
+
+    sudo apt-get install python3 python3-venv python3-pip
+    
+===========================================================================
+python3 -m pip install --upgrade pip
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+
+sudo apt-get install python3 python3-venv python3-pip
+
+sudo apt-get install -y mongodb
+pip install pymongo
+
+sudo apt-get install mosquitto
+pip install paho-mqtt
+
+sudo apt-get install git
+git config --global user.email "francoisrochefort@hotmai.fr
+git config --global user.name "francoisrochefort"
+
+sudo apt-get install idle3
+pip install tk
+pip install pygame
+
+sudo snap install --classic code
+git clone "https://github.com/July39/OI_projet1.git"
+
+
+pip install py-picotts (ne sert a rien je pense)
+sudo apt install libttspico-utils
+sudo apt-get install python3-pyaudio
+pip install pvporcupine
+
+
+pip install fuzzywuzzy[speedup]
+
+
+
+
