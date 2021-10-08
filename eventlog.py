@@ -4,7 +4,8 @@ from datetime import date, datetime
 
 
 # misc. constants
-MONGODB_URI = "localhost"
+# MONGODB_URI = "localhost"
+MONGODB_URI = "mongodb+srv://m001_student:admin@cluster0.5v451.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 DATE_FORMAT = "%Y/%m/%d"
 TIME_FORMAT = "%H:%M:%S"
 

@@ -1,7 +1,7 @@
 
 
-__all__ = ["MQTT_BROKER", 
-           "CLIENT_ALARM_PROXY", 
+__all__ = ["MQTT_BROKER",
+           "CLIENT_ALARM_PROXY",
            "CLIENT_SMARTPLUG_PROXY",
            "CLIENT_SMARTPLUG_STUB",
            "CLIENT_ALARM_STUB",
@@ -26,6 +26,7 @@ __all__ = ["MQTT_BROKER",
 
 """MQTT broker"""
 MQTT_BROKER = "127.00.00.01"
+MQTT_BROKER = "mqtt.eclipseprojects.io"
 
 """MQTT clients"""
 CLIENT_ALARM_PROXY = "AlarmProxy"
@@ -41,26 +42,25 @@ TOPIC_COMMAND = "Gills/Commandes"
 
 """SmartPlug1 states"""
 SMARTPLUG_STATE_OFF = "off"
-SMARTPLUG_STATE_ON  = "on"
+SMARTPLUG_STATE_ON = "on"
 
 """SmartPlug1 commands"""
 SMARTPLUG_CMD_OFF = "off"
-SMARTPLUG_CMD_ON  = "on"
+SMARTPLUG_CMD_ON = "on"
 
 """System alarm states"""
 SYSALARM_STATE_OFF = "off"
-SYSALARM_STATE_ON  = "on"
-SYSALARM_STATE_RING  = "ring"
+SYSALARM_STATE_ON = "on"
+SYSALARM_STATE_RING = "ring"
 
 """System alarm commands"""
 SYSALARM_CMD_OFF = "off"
-SYSALARM_CMD_ON  = "on"
+SYSALARM_CMD_ON = "on"
 
 """Light states"""
 LIGHT_STATE_OFF = "off"
-LIGHT_STATE_ON  = "on"
+LIGHT_STATE_ON = "on"
 
 """Light commands"""
 LIGHT_CMD_OFF = "off"
-LIGHT_CMD_ON  = "on"
-
+LIGHT_CMD_ON = "on"
